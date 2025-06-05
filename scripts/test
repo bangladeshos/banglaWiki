@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -e
+
+scripts/build --config _config.yml,test/_config.yml
+bundle exec rake
+
+set +e
+
+scripts/html-proofer
+HTML_PROOFER_EXIT="$?"
+test/prose
+PROSE_EXIT="$?"
+[[ "$HTML_PROOFER_EXIT" == 0 && "$PROSE_EXIT" == 0 ]]

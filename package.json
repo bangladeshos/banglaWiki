@@ -1,0 +1,12 @@
+{
+  "name": "banglawiki",
+  "private": true,
+  "scripts": {
+    "test": "scripts/test",
+    "postinstall": "cd test && npm install"
+  },
+  "dependencies": {
+    "primer-core": "7.0.0",
+    "primer-marketing": "7.0.0"
+  }
+}
